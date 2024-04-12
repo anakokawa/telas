@@ -133,22 +133,6 @@ function Quadros({ navigation }) {
   )
 }
 
-const Stack = createNativeStackNavigator();
-
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Historia" component={Hitoria} />
-        <Stack.Screen name="Quadros" component={Quadros} />
-        <Stack.Screen name="Cálculos" component={Cálculos} />
-        <Stack.Screen name="Sobre" component={Sobre} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
-
 function Cálculos({ navigation }) {
   return (
 
@@ -172,6 +156,54 @@ function Cálculos({ navigation }) {
 
             <Image source={imgmona} style={{borderRadius:900}}/>
 
+            </ScrollView>
+          </View>
+          <View>
+            <Button
+              title="    Voltar    "
+              onPress={() => navigation.goBack()}
+              color="000"
+            />
+            <Text></Text>
+
+          </View>
+        </View>
+      </ImageBackground>
+    </View>
+  )
+}
+
+function Sobre({ navigation }) {
+  return (
+
+    <View style={styles.container}>
+      <ImageBackground
+        source={imgdavinci}
+        style={{
+          flex: 1,
+          resizeMode: 'cover',
+          justifyContent: 'center',
+          width: "100%"
+        }}>
+        <View style={styles.container}>
+          <View style={styles.content}>
+
+            <Text style={{ fontSize: 80, color: "#fff" }}>
+              NÃO
+            </Text>
+
+            <ScrollView>
+
+            <Image source={imgmona} style={{borderRadius:900, justifyContent: 'center',}}/>
+            <Text
+            style={{
+              color: '#fff',
+              fontWeight: 'bold',
+              fontSize: 20,
+              textAlign: 'center',
+            }}>
+            Ana Laura de Souza Fernandes
+          </Text>
             </ScrollView>
           </View>
           <View>
